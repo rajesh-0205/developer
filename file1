@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Price Checker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>💰 Crypto Price Checker</h2>
+    <p>Choose a cryptocurrency or enter a symbol manually.</p>
+
+    <!-- Dropdown -->
+    <label for="cryptoSelect">Select Cryptocurrency:</label>
+    <select id="cryptoSelect">
+      <option value="">-- Select --</option>
+      <option value="bitcoin">Bitcoin (BTC)</option>
+      <option value="ethereum">Ethereum (ETH)</option>
+      <option value="dogecoin">Dogecoin (DOGE)</option>
+      <option value="cardano">Cardano (ADA)</option>
+      <option value="polkadot">Polkadot (DOT)</option>
+      <option value="solana">Solana (SOL)</option>
+      <option value="ripple">XRP</option>
+      <option value="litecoin">Litecoin (LTC)</option>
+      <option value="binancecoin">Binance Coin (BNB)</option>
+      <option value="polygon">Polygon (MATIC)</option>
+    </select>
+
+    <!-- Manual Input -->
+    <div class="form">
+      <input type="text" id="cryptoSymbol" placeholder="Enter symbol (e.g. BTC)">
+      <button id="checkPrice">Check Price</button>
+    </div>
+
+    <!-- Output -->
+    <div id="priceOutput" class="output-box"></div>
+
+    <!-- Top Cryptos -->
+    <h3>🔥 Top Cryptocurrencies</h3>
+    <div class="top-cryptos">
+      <div class="crypto-card" data-id="bitcoin">
+        <img src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png" alt="BTC">
+        <p>BTC</p>
+      </div>
+      <div class="crypto-card" data-id="ethereum">
+        <img src="https://assets.coingecko.com/coins/images/279/large/ethereum.png" alt="ETH">
+        <p>ETH</p>
+      </div>
+      <div class="crypto-card" data-id="dogecoin">
+        <img src="https://assets.coingecko.com/coins/images/5/large/dogecoin.png" alt="DOGE">
+        <p>DOGE</p>
+      </div>
+      <div class="crypto-card" data-id="cardano">
+        <img src="https://assets.coingecko.com/coins/images/975/large/cardano.png" alt="ADA">
+        <p>ADA</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Left & Right Panels -->
+  <div id="detailsSection" class="details hidden">
+    <div class="left">
+      <h3>📉 Historical Data</h3>
+      <canvas id="historyChart"></canvas>
+    </div>
+    <div class="right">
+      <h3>📈 Prediction</h3>
+      <canvas id="predictionChart"></canvas>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
